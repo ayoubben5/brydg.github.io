@@ -1,0 +1,619 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Brydg - Property Financing &amp; Asset Backed Lending Platform</title>
+    <meta name="title" content="Brydg - Property Financing &amp; Asset Backed Lending Platform">
+    <meta name="description" content="Brydg eXchange is the UK's largest real estate lending platform, with over £750 million of loans serviced. Brydg Capital provides bespoke real estate lending with advanced underwriting.">
+    <link rel="shortcut icon" type="image/x-icon" href="https://dev.brydg.com/public/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://dev.brydg.com/public/css/animate.css">
+    <link rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+    <link rel="stylesheet" href="https://dev.brydg.com/public/css/aos.css">
+    <link rel="stylesheet" href="https://dev.brydg.com/public/css/styles.css?v=1.1">
+
+    <!-- CookiePro Cookies Consent Notice start for brydg.com
+	<script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="d576ffee-eb25-4e9f-9cc7-dbf316ca2918-test" ></script>
+	<script type="text/javascript">
+	function OptanonWrapper() { }
+	</script>
+	CookiePro Cookies Consent Notice end for brydg.com -->
+
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="6e756a68-5d9a-44e1-a38a-e77be8bed135" type="text/javascript" async></script>
+    <script>
+        (function(n, t, i, r) {
+            var u, f;
+            n[i] = n[i] || {}, n[i].initial = {
+                accountCode: "INDIV56981",
+                host: "INDIV56981.pcapredict.com"
+            }, n[i].on = n[i].on || function() {
+                (n[i].onq = n[i].onq || []).push(arguments)
+            }, u = t.createElement("script"), u.async = !0, u.src = r, f = t.getElementsByTagName("script")[0], f.parentNode.insertBefore(u, f)
+        })(window, document, "pca", "https://INDIV56981.pcapredict.com/js/sensor.js")
+    </script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-63098243-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-63098243-4');
+    </script>
+</head>
+
+<body>
+
+    <section id="bg" class="home">
+
+        <div id="video">
+            <video autoplay loop muted playsinline poster="https://dev.brydg.com/public/bg.jpg">
+				<source src="https://dl.dropboxusercontent.com/s/bnlvoinzasns5o4/bg.webm">
+				<source src="https://dl.dropboxusercontent.com/s/uee4xfloczspbau/bg.mp4" type="video/mp4">
+				<source src="https://dl.dropboxusercontent.com/s/pqxftng63vz4534/bg.ogv" type="video/ogg">
+				Your browser does not support the video tag.
+			</video>
+        </div>
+
+        <div class="header">
+            <div class="branding">
+                <a href="javascript:void(0);" class="menu-trigger"><img src="https://dev.brydg.com/public/img/menu.svg"></a>
+                <a href="#" class="logo"><img src="https://dev.brydg.com/public/img/logo.svg"> <img src="https://dev.brydg.com/public/img/brydg.png"></a>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <p>Property financing</p>
+            <p>Let's start with an address:</p>
+            <form id="postcode">
+                <p class="tooltip" style="display:none;background:#fff;padding:10px;">
+                    Please select an address from dropdown.
+                </p>
+                <div class="input-group">
+                    <select id="countrySelect" class="form-control" title="Country select">
+                        <option value="GBR">UK</option>
+                        <option value="USA">US</option>
+                    </select>
+                    <input type="text" class="form-control" name="address" placeholder="postcode, address…" >
+					<div id="error-message" style="display:none; ">Please select an address.</div>
+
+					<script>
+					  document.querySelector('form').addEventListener('submit', function(event) {
+						var addressInput = document.querySelector('input[name="address"]');
+						if (!addressInput.value) {
+						  event.preventDefault();
+						  document.getElementById('error-message').style.display = 'block';
+						  document.getElementById('error-message').style.position = 'absolute';
+							document.getElementById('error-message').style.top = '100%';
+							document.getElementById('error-message').style.left = '50%';
+							document.getElementById('error-message').style.transform = 'translate(-50%, 0)';
+							document.getElementById('error-message').style.zIndex = '1';
+							document.getElementById('error-message').style.padding = '10px';
+							document.getElementById('error-message').style.backgroundColor = '#f44336';
+							document.getElementById('error-message').style.color = '#fff';
+							document.getElementById('error-message').style.borderRadius = '5px';
+
+						  document.getElementById('postcode').style.border = '2px solid #f44336 ';
+						  document.getElementById('postcode').style.borderRadius = '5px';
+						  setTimeout(function() {
+							document.getElementById('error-message').style.display = 'none';
+							document.getElementById('postcode').style.border = '';
+						  }, 2000); // hide after 2 seconds
+						}
+					  });
+					</script>
+					
+	                <i class="fas fa-search"></i>
+                </div>
+            </form>
+            <p>A sophisticated real estate lending marketplace for institutional investors and originators</p>
+        </div>
+
+        <a href="#" id="scroll-down">Scroll down</a>
+
+        <div class="navigators animated delay-1s">
+            <span><img src="https://dev.brydg.com/public/img/brydg-groupof-companies.svg"></span><a href="#exchange" class="current" data-href="exchange"><img src="https://dev.brydg.com/public/img/exchange.svg"><span>Asset backed lending platform for Investors and Originators</span></a><a href="#capital" data-href="capital"><img src="https://dev.brydg.com/public/img/capital.svg"><span>Bespoke lending from £1m - £100m with advanced underwriting</span></a>
+        </div>
+
+    </section>
+
+    <div class="main-body" id="main-body">
+
+        <div class="brydg-exchange">
+
+            <div id="exchange" class="intro-statement" data-aos="fade-in">
+                <p>It's time for the digital evolution of real estate lending. The Brydg Exchange is a full stack marketplace to standardise real estate lending for scale and transparency.</p>
+            </div>
+
+            <section id="originators" class="section odd" data-aos="fade-in">
+
+                <div class="wrapper">
+
+                    <div class="header">
+                        <h2>A sourcing platform for <span class="brydg-red-tx">Originators</span></h2>
+                        <p>Available Funding</p>
+                        <p class="value">£<span id="availableFunding">380,000,000</span></p>
+                        <p>Lenders</p>
+                        <p class="value"><span id="investorCount">23</span></p>
+                        <p>Interest as low as</p>
+                        <p class="value"><span id="interest">6.5</span>% per annum</p>
+                    </div>
+
+                    <div class="content-area">
+                        <h4>Summary</h4>
+                        <p>Whether you're a Broker, Intermediary, Network, or Packager, we are uniquely positioned as a Lender with a minimum of £100 million of discretionary capital at any given time as well as an Exchange of global family offices and institutional
+                            investors who trust us with various mandates.</p>
+                        <hr>
+                        <h4>Top Features</h4>
+                        <ul>
+                            <li>Loan Management Console with Document Repository</li>
+                            <li>Instant Offers</li>
+                            <li>1 Application/Many Lenders</li>
+                        </ul>
+                    </div>
+
+                    <div class="additional-content-area">
+                        <button class="brydg-red-bg hvr-shutter-out-horizontal" data-href="https://flow.brydg.com/#/brokers">Submit a loan <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        <p>Criteria:</p>
+                        <ul>
+                            <li>Max 75% LTV</li>
+                            <li>Non owner occupied</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="lenders" class="section even" data-aos="fade-in">
+
+                <div class="wrapper">
+
+                    <div class="header">
+                        <h2>A marketplace for <span class="brydg-blue-tx">Lenders</span></h2>
+                        <p>Current Loan Enquiries</p>
+                        <p class="value">£<span id="enquiries">122,850,000</span></p>
+                        <p>Average Loan To Value</p>
+                        <p class="value"><span id="ltv">58.87</span>%</p>
+                        <p>Average Loan Term</p>
+                        <p class="value"><span id="term">12</span> Months</p>
+                    </div>
+
+                    <div class="content-area">
+                        <h4>Summary</h4>
+                        <p>Invest with scale, complete control, short duration and attractive returns.</p>
+                        <p>We directly connect providers of capital with borrowers looking for business loans secured against property. We work with property developers and other individuals and businesses looking for bridge loans, otherwise known as short
+                            term credit secured against real estate.</p>
+                        <p>Our platform gives institutional investors scaled access to asset backed loans where we manage the originations process, advise on the credit and underwriting of the loan and even service the loan on behalf of our investors.</p>
+                        <hr>
+                        <h4>Top Features</h4>
+                        <ul>
+                            <li>AIWHO advanced underwriting of borrower, asset and transaction</li>
+                            <li>Dashboard reporting console with detailed portfolio and loan views containing everything from valuation reports to credit memos</li>
+                            <li>Dedicated investor relations team to support in all aspects of closing a transaction, from credit assessment to liaising with counter parties</li>
+                        </ul>
+                    </div>
+
+                    <div class="additional-content-area">
+                        <button class="brydg-blue-bg hvr-shutter-out-horizontal" data-href="lenders">Get access <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        <p>Easy access subject to approval</p>
+                        <p>Criteria:</p>
+                        <ul>
+                            <li>£10m minimum capital</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section id="timeline" class="section odd" data-aos="fade-in">
+
+                <div class="wrapper">
+                    <h2>Exchange features in <span class="brydg-gold-tx">The life of a loan</span></h2>
+                </div>
+
+                <div class="mytooltip">
+                    <p>A sneak peek into a <span style="font-style:italic;">Smart Contract</span> <span style="font-size:20px;">&#9786;</span></p>
+                </div>
+
+                <div id='timeline-embed' style="width: 100%; height: 350px"></div>
+                <!-- <iframe src='https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=1nSM9h82lQCErOoM3JaQqESSJjI21H_9i4iyKFLaTZO4&font=Default&lang=en&initial_zoom=1&scale_factor=5' width='100%' height='650' webkitallowfullscreen mozallowfullscreen allowfullscreen frameborder='0'></iframe> -->
+
+            </section>
+
+        </div>
+
+        <div class="brydg-capital">
+
+            <div id="capital" class="intro-statement" data-aos="fade-in">
+                <p>Our team has been lending against UK real estate for over 30 years and we have a trusted reputation which is second to none.</p>
+            </div>
+
+            <section class="section" data-aos="fade-in">
+
+                <div class="wrapper" style="position:relative">
+
+                    <div class="client-login">
+                        <div class="client-input">
+                            <input type="text" placeholder="Login">
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <button class="brydg-gold-bg client-login hvr-shutter-out-horizontal" data-href="https://flow.brydg.com/investors/dashboard">Client Login <i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        <p>By invitation only</p>
+                    </div>
+
+                    <h2><span>Bespoke</span> Approach</h2>
+
+                    <p>We are not real estate developers, so we don't compete with our clients. We approach every loan with a tailor made strategy, which is unique to the borrower's needs and our investment criteria. Our investment mandates allow us to move
+                        with speed whilst our technology and team of real estate and credit veterans are uncompromising on diligence.</p>
+
+                </div>
+
+            </section>
+
+            <section class="section" data-aos="fade-in">
+
+                <div class="wrapper">
+
+                    <h2><span>Advanced</span> Underwriting</h2>
+
+                    <p>Our proprietary underwriting approach, AIHWO (Artificial Intelligence With Human Oversight), is formed through decades of lending experience coupled with the most advanced technologies and data analytics, which allows us to diligently
+                        assess the following loan characteristics:</p>
+
+                    <ul>
+                        <li>The Borrower (e.g. credit history, experience etc.)</li>
+                        <li>The Asset (e.g. location, area liquidity, property condition etc.)</li>
+                        <li>The Transaction (e.g. LTV, exit strategy, business plan etc.)</li>
+                    </ul>
+
+                    <p>Every loan is put through rigorous diligence with an emphasis on downside protection whilst reviewing the main transaction characteristics where the loan is sufficiently over collateralised to compensate major downturn of the market.</p>
+
+                    <p><img src="https://dev.brydg.com/public/img/dashboard.png"></p>
+
+                </div>
+
+            </section>
+
+            <section class="section" data-aos="fade-in">
+
+                <div class="wrapper">
+
+                    <h2><span>Dynamic</span> Monitoring</h2>
+
+                    <p>The management and servicing of each loan is dynamic in that we are routinely stress testing each loan, from the asset value to the exit strategy, to assure all loan covenants are met at all times without exception. From drawdown of
+                        funds through to maturity at redemption, the distance to asset value is tested against regular valuations of the properties and Dynamic Loan Covenants.</p>
+
+                    <p><img src="https://dev.brydg.com/public/img/davt.png"></p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </div>
+
+    <div class="timeline-container">
+
+        <div class="timeline-area animated delay-2s">
+            <div class="timeline-title">Brydg Milestones</div>
+            <div class="timeline-filters">
+                <ul>
+                    <li class="active"><a href="javascript:void(0);" class="filter-milestones"><i class="fas fa-flag"></i> Milestones</a></li>
+                    <li class="active"><a href="javascript:void(0);" class="filter-events"><i class="fas fa-rocket"></i> Events</a></li>
+                </ul>
+            </div>
+            <div class="timeline-content">
+
+                <ul class="timeline">
+
+                    <li class="animated timeline-events">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date">03 Aug 2020. 9:30am</p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><span class="smaller-900 brydg-red-tx" style="line-height:normal;">Brydg CBILS</span></p>
+                                <p><img src="https://dev.brydg.com/public/img/BBB_logo2.png" alt="British Business Bank"></p>
+                                <p style="margin-bottom:10px;"><span class="smallest-300">We are proud to be working with the British Business Bank as an accredited lender under the Coronavirus Business Interruption Loan Scheme.</span></p>
+                                <!--<p style="margin-bottom:10px;"><span class="smallest-300">We are proud to be a CBILS accredited lender and are working with the British Business Bank to be operational, live and lending very shortly.</span></p>-->
+                                <!-- <p><a href="#cbils" class="timeline-cbils" data-href="cbils" style="display:block;background:#b99e5b;color:#fff;padding:10px 15px;font-size:24px;border-radius: 5px;position:relative;">See more <i class="fa fa-chevron-right" aria-hidden="true" style="width: 28px;height: 28px;border: solid 2px #fff;color: #fff;-webkit-border-radius: 50%;-moz-border-radius: 50%;border-radius: 50%;text-align: center;font-size: 13px;margin:0;background:none;position:absolute;right:15px;top:50%;margin-top:-14px;line-height:16px!important;"></i></a></p> -->
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-1s timeline-milestones">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date"></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><span class="medium-900 brydg-blue-tx">£<span id="lent">782,041,185</span></span> <br><span class="small-300">in loans funded</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-2s timeline-milestones">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date"></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><span class="medium-900 brydg-blue-tx">£<span id="propertiesFunded">1,399,330,520</span></span> <br><span class="small-300">total value of properties funded</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-3s timeline-milestones">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date"></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><span class="medium-900 brydg-blue-tx"><span id="irr">10.8</span><span class="medium-300 brydg-blue-tx">%</span></span> <br><span class="small-300">average IRR</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-4s timeline-milestones">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date"></p>
+                            </div>
+                            <div class="timeline-body">
+                                <p><span class="medium-900 brydg-blue-tx"><span id="ltvCount">55.89</span><span class="medium-300 brydg-blue-tx">%</span></span> <br><span class="small-300">average LTV</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-5s timeline-events">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date">08 Oct 2019. 5:30pm</p>
+                            </div>
+                            <div class="timeline-body">
+                                <p style="margin-bottom:15px;">
+                                    <a href="https://dev.brydg.com/pulse/brexit" target="_blank"><img src="https://dev.brydg.com/public/img/brexit-event.jpg" alt="The Future of Real Estate Value in Post Brexit Britain"></a>
+                                </p>
+                                <p style="margin-bottom:15px;"><span class="smallest-300">Join an engaging panel conversation to discuss the impact of the current political climate on real estate prices in the long term and short term.</span></p>
+                                <p><span class="smallest-300">Location: Brydg HQ Mayfair</span></p>
+                                <p><span class="smallest-300">Date: Tue, October 15, 2019</span></p>
+                                <p style="margin-bottom:20px;"><span class="smallest-300">Time: 2:30 PM – 4:30 PM GMT</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-6s timeline-events">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date">28 Mar 2019. 6:00pm - 8:00pm</p>
+                            </div>
+                            <div class="timeline-body">
+                                <p style="margin-bottom:10px;"><span class="smaller-900 brydg-red-tx" style="line-height:normal;">Broker Networking</span></p>
+                                <p style="margin-bottom:15px;"><span class="smallest-300">Brydg is hosting this unique event for brokers who deal with high net worth/ big ticket specialist property loans in central London.</span></p>
+                                <p><span class="smallest-300">Location: Brydg HQ Mayfair</span></p>
+                                <p><span class="smallest-300">Date: Thu, March 28, 2019</span></p>
+                                <p style="margin-bottom:20px;"><span class="smallest-300">Time: 6:00 PM – 8:00 PM GMT</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="animated delay-7s timeline-events">
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <p class="timeline-date">12 - 15 Mar 2019</p>
+                            </div>
+                            <div class="timeline-body">
+                                <p style="margin-bottom:10px;"><span class="smaller-900 brydg-red-tx">Brydg in Cannes at MIPIM</span></p>
+                                <p style="margin-bottom:10px;"><img src="https://dev.brydg.com/public/img/mipim.JPG"></p>
+                                <p style="margin-bottom:10px;"><span class="smallest-300">Come meet us in Cannes at the 30th anniversary of MIPIM for the largest property exhibition in the world.</span></p>
+                                <p><span class="smallest-300">Location: Cannes, France</span></p>
+                                <p style="margin-bottom:20px;"><span class="smallest-300">Date: 12 – 15 March 2019</span></p>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+
+        <iframe id="latitude" src="https://dev.brydg.com/vast/latitude/2.02" frameborder="0" scrolling="no"></iframe>
+        <script src="https://dev.brydg.com/vast/latitude/2.02/js/latitude-iframe.js"></script>
+
+        <div class="flex-container">
+
+            <div class="one box">
+                <h5><a href="https://dev.brydg.com/capital" class="capital-trigger">Brydg Capital</a></h5>
+                <p>Bespoke lending from £1m - £100m with advanced underwriting and dynamic loan management.</p>
+            </div>
+            <div class="two box">
+                <h5><a href="https://dev.brydg.com/exchange" class="exchange-trigger">Brydg Services</a></h5>
+                <p>Asset backed lending platform providing Originators one application to reach many lenders. Lenders have sophisticated loan management dashboard and have the control of being "Lenders of Record".</p>
+            </div>
+            <div class="three box">
+                <h4><a href="https://flow.brydg.com" target="_blank">OX</a></h4>
+                <h5>Originator Experience</h5>
+                <p>Originators and intermediaries get instant decisions with one application to reach many Lenders.</p>
+            </div>
+            <div class="four box">
+                <h4><a href="https://dev.brydg.com/lenders" target="_blank">LX</a></h4>
+                <h5>Lender Experience</h5>
+                <p>Ability to scale real estate backed lending with attractive IRRs and complete security as "Lender of Record".</p>
+            </div>
+            <div class="five box">
+                <h4><a href="https://flow.brydg.com/investors/dashboard" target="_blank">IX</a></h4>
+                <h5>Investor Experience</h5>
+                <p>Investors have complete control and convenience through our sophisticated technology coupled with our team of real estate and credit veterans managing their loan investments.</p>
+            </div>
+            <div class="six box">
+                <ul>
+                    <li><a href="https://dev.brydg.com/about">About us</a></li>
+                    <li><a href="https://dev.brydg.com/philanthropy">Philanthropy</a></li>
+                    <li><a href="https://pulse.brydg.com" target="_blank">Pulse Blog</a></li>
+                    <li><a href="https://brydg.eventbrite.com/o/brydgcom-17476202033" target="_blank">Events</a></li>
+                    <li><a href="https://dev.brydg.com/shop" target="_blank">Merchandise Shop</a></li>
+                </ul>
+            </div>
+            <div class="seven box">
+                <p>Nightingale House <br>65 Curzon Street <br>London, W1J 8PE</p>
+                <p>+44 203 137 7630</p>
+                <p><a href="mailto:info@brydg.com">info@brydg.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="wrapper">
+
+            <div class="footer-socials">
+
+                <div class="accredited-tag">
+                    <img style="padding-left:10px;" src="https://dev.brydg.com/public/img/BBB_logo2.png" alt="British Business Bank logo">
+                    <p>Brydg is an accredited lender under the Coronavirus Business Interruption Loan Scheme (CBILS), provided by the <strong>Government-owned British Business Bank</strong> and the Secretary of State for Business, Energy and Industrial Strategy
+                        (BEIS).
+                    </p>
+                </div>
+
+                <div class="newsletter">
+
+                    <div class="social-media">
+                        <a href="https://www.facebook.com/brydg/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://twitter.com/brydgcom" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                        <a href="https://instagram.com/brydg_" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/brydg/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/channel/UC1xkXZ7OHoqHDDQzw3Vr84w" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://brydg.eventbrite.com/o/brydgcom-17476202033" target="_blank"><img style="width:25px;vertical-align:baseline;" src="https://dev.brydg.com/public/img/eventbrite.png"></a>
+                    </div>
+
+                    <div id="mc_embed_signup">
+                        <form action="https://brydg.us13.list-manage.com/subscribe/post?u=60bcc3d9308ec5d8d42566461&amp;id=0e6e564faf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_60bcc3d9308ec5d8d42566461_0e6e564faf" tabindex="-1" value=""></div>
+                                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="https://dev.brydg.com/privacy">Privacy Policy</a></li>
+                    <li><a href="https://dev.brydg.com/cookies">Cookie Policy</a></li>
+                    <li><a href="https://dev.brydg.com/complaints">Complaints</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-copy">
+                <div class="footer-copy-excerpt">
+                    <p>Brydg Capital Ltd. is a company registered in England and Wales under Company No. 0&shy;9034678, with its registered office at Nightingale House, 65 Curzon Street, London, W1J 8PE. Brydg Capital is authorised and regulated
+                        by the Financial Conduct Authority as credit broker and not a consumer lender - FRN 739493. Brydg Capital may provide loans in relation to exempt agreements only.</p>
+                    <button>
+						<i class="fas fa-angle-down"></i>
+						<span class="footer-copy-more">More</span>
+						<span class="footer-copy-hide">Hide</span>
+					</button>
+                </div>
+                <div class="footer-copy-content">
+                    <p>Brydg Services is a company registered in England and Wales under Company No. 10627092 with its registered office at Nightingale House, 65 Curzon Street, London, W1J 8PE.</p>
+                    <p>Investment through Brydg Capital Ltd. involves an investment in an interest rate receivable, from loans secured against property in the UK. Whilst the underlying loan is secured against property, remember, the value of your investment
+                        can go down as well as up. Also, past returns are not necessarily a guide to future returns. The net return shown for each investment is the net return after fees but before any deduction for tax and the return is specific to each
+                        loan.
+                    </p>
+                    <p>Borrowing through Brydg Capital Ltd. involves entering into a mortgage contract secured against investment property in England &amp; Wales as borrower. Your property may be repossessed if you do not keep up repayments on your mortgage.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="main-menu">
+
+        <div class="menu-header">
+            <a href="javascript:void(0);" class="close-trigger">&times;</a>
+            <span>Menu</span>
+            <a href="/"><img src="https://dev.brydg.com/public/img/logo.svg"></a>
+        </div>
+
+        <div class="menu-container">
+            <ul class="menu">
+                <li><a href="https://dev.brydg.com/capital"><span>Brydg Capital</span></a></li>
+                <ul>
+                    <!-- <li><a href="/cbils">Coronavirus Business Interuption Loan Scheme</a></li> -->
+                    <li><a href="https://flow.brydg.com/investors/dashboard" target="_blank">Investor Dashboard</a></li>
+                </ul>
+                <li><a href="https://dev.brydg.com/exchange"><span>The Marketplace</span></a></li>
+                <ul>
+                    <li><a href="https://flow.brydg.com" target="_blank">Broker's Portal</a></li>
+                    <li><a href="https://dev.brydg.com/lenders">Become a Lender</a></li>
+                </ul>
+                <li><a href="https://dev.brydg.com/about"><span>About us</span></a></li>
+                <ul>
+                    <li><a href="https://dev.brydg.com/newsroom"><span>Newsroom</span></a></li>
+				    <li><a href="https://pulse.brydg.com" target="_blank"><span>Pulse Blog</span></a></li>
+                    <li><a href="https://dev.brydg.com/philanthropy"><span>Philanthropy</span></a></li>
+                </ul>
+                <li><a href="https://dev.brydg.com/area/UK"><span>Area Guide <sup>beta</sup></span></a></li>
+                <li><a href="https://dev.brydg.com/shop"><span>Merchandise Shop</span></a></li>
+            </ul>
+        </div>
+
+        <div class="menu-footer clearfix">
+            <h3>Connect</h3>
+            <div class="newsletter">
+                <div id="mc_embed_signup">
+                    <form action="https://brydg.us13.list-manage.com/subscribe/post?u=60bcc3d9308ec5d8d42566461&amp;id=0e6e564faf" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_60bcc3d9308ec5d8d42566461_0e6e564faf" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="social-media">
+                <a href="https://www.facebook.com/brydg/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://twitter.com/brydgcom" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                <a href="https://instagram.com/brydg_" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/brydg/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.youtube.com/channel/UC1xkXZ7OHoqHDDQzw3Vr84w" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://brydg.eventbrite.com/o/brydgcom-17476202033" target="_blank"><img style="width:25px;vertical-align:baseline;" src="https://dev.brydg.com/public/img/eventbrite.png"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://dev.brydg.com/public/css/pca.css">
+    <script src="https://dev.brydg.com/public/js/moment.min.js"></script>
+    <script src="https://dev.brydg.com/public/js/countUp.min.js"></script>
+    <!-- <script src="/public/js/timeline.js"></script> -->
+    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+    <script src="https://dev.brydg.com/public/js/aos.js"></script>
+    <script src="https://dev.brydg.com/public/js/functions.js" data-cookieconsent="marketing"></script>
+    <script src="https://dev.brydg.com/public/js/home.js"></script>
+    <script src="https://dev.brydg.com/public/js/menu.js"></script>
+    <!--<script src="js/intercom.js"></script>-->
+    <script src="https://dev.brydg.com/public/js/userback.js"></script>
+</body>
+
+</html>
