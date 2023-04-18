@@ -73,7 +73,7 @@
             <p>Property financing</p>
             <p>Let's start with an address:</p>
             <form id="postcode">
-                <p class="tooltip" style="display:none;background:#fff;padding:10px;">
+                <p class="tooltip" style="display:block;background:#fff;padding:10px;">
                     Please select an address from dropdown.
                 </p>
                 <div class="input-group">
@@ -82,11 +82,11 @@
                         <option value="USA">US</option>
                     </select>
                     <input type="text" class="form-control" name="address" placeholder="postcode, address…" >
+
+                    <!-- the code i added: START -->
 					<div id="error-message" style="display:none; ">Please select an address.</div>
 
 					<script>
-                        var form = document.getElementById('form');
-                        console.log(form);
 					  document.querySelector('form').addEventListener('submit', function(event) {
 						var addressInput = document.querySelector('input[name="address"]');
                         
@@ -112,6 +112,8 @@
 						}
 					  });
 					</script>
+
+                    <!-- the code i added ; END-->
 					
 	                <i class="fas fa-search"></i>
                 </div>
