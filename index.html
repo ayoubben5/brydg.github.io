@@ -73,7 +73,7 @@
             <p>Property financing</p>
             <p>Let's start with an address:</p>
             <form id="postcode">
-                <p class="tooltip" style="display:block;background:#fff;padding:10px;">
+                <p class="tooltip" style="display:none;background:#fff;padding:10px;">
                     Please select an address from dropdown.
                 </p>
                 <div class="input-group">
@@ -87,6 +87,17 @@
 					<div id="error-message" style="display:none; ">Please select an address.</div>
 
 					<script>
+                        const input = document.querySelector('input[name="address"]');
+                        const tooltip = document.querySelector('.tooltip');
+
+                        // Listen for keyboard events
+                        input.addEventListener('keydown', function() {
+                        tooltip.style.display = 'block';
+                        tooltip.style.backgroundColor = '#f44336';
+                        });
+
+
+
 					  document.querySelector('form').addEventListener('submit', function(event) {
 						var addressInput = document.querySelector('input[name="address"]');
                         
