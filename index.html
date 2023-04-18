@@ -83,26 +83,7 @@
                     </select>
                     <input type="text" class="form-control" name="address" placeholder="postcode, address…" >
 					<div id="error-message" style="display:none; ">Please select an address.</div>
-                    <script>
-                        // Get the form element
-                        const form = document.getElementById('postcode');
-                        // Get the address input element
-                        const addressInput = document.getElementById('address');
-                        // Get the tooltip element
-                        const tooltip = document.querySelector('.tooltip');
-                
-                        // Add event listener to form on submit
-                        form.addEventListener('submit', (event) => {
-                            // If the address input is empty, prevent form submission and show error tooltip
-                            if (!addressInput.value) {
-                                event.preventDefault();
-                                tooltip.style.display = 'block';
-                            } else {
-                                tooltip.style.display = 'none';
-                            }
-                        });
-                    </script>
-<!-- 
+
 					<script>
 					  document.querySelector('form').addEventListener('submit', function(event) {
 						var addressInput = document.querySelector('input[name="address"]');
@@ -129,7 +110,7 @@
 						  }, 2000); // hide after 2 seconds
 						}
 					  });
-					</script> -->
+					</script>
 					
 	                <i class="fas fa-search"></i>
                 </div>
