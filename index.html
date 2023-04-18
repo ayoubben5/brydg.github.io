@@ -85,10 +85,11 @@
 					<div id="error-message" style="display:none; ">Please select an address.</div>
 
 					<script>
+                        var form = document.getElementById('pca');
+                        console.log(form);
 					  document.querySelector('form').addEventListener('submit', function(event) {
 						var addressInput = document.querySelector('input[name="address"]');
-                        var form = document.getElementById('postcode');
-                        console.log(form);
+                        
 						if (!addressInput.value) {
 						  event.preventDefault();
 						  document.getElementById('error-message').style.display = 'block';
