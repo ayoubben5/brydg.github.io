@@ -81,19 +81,27 @@
                         <option value="GBR">UK</option>
                         <option value="USA">US</option>
                     </select>
-                    <input type="text" class="form-control" name="address" placeholder="postcode, address…" >
-
                     <!-- the code i added: START -->
+                    <div id="warning-message" style="display:none; ">Please select an address from dropdown.</div>
+                    <input type="text" class="form-control" name="address" placeholder="postcode, address…" >
+                    
 					<div id="error-message" style="display:none; ">Please select an address.</div>
 
 					<script>
                         const input = document.querySelector('input[name="address"]');
-                        const tooltip = document.querySelector('.tooltip');
-
                         // Listen for keyboard events
                         input.addEventListener('keydown', function() {
-                        tooltip.style.display = 'block';
-                        tooltip.style.backgroundColor = '#f44336';
+                        console.log('typing');
+                        document.getElementById('warning-message').style.display = 'block';
+						  document.getElementById('warning-message').style.position = 'absolute';
+							document.getElementById('warning-message').style.top = '100%';
+							document.getElementById('warning-message').style.left = '50%';
+							document.getElementById('warning-message').style.transform = 'translate(-50%, 0)';
+							document.getElementById('warning-message').style.zIndex = '1';
+							document.getElementById('warning-message').style.padding = '10px';
+							document.getElementById('warning-message').style.backgroundColor = '#f44336';
+							document.getElementById('warning-message').style.color = '#fff';
+							document.getElementById('warning-message').style.borderRadius = '5px';
                         });
 
 
