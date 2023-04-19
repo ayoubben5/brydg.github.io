@@ -94,10 +94,22 @@
 
                     function validateAutoComplete() {
                     if (inputField.value === '') {
-                        errorMessage.style.display = 'block';
+                        document.getElementById('error-message').style.display = 'block';
+						  document.getElementById('error-message').style.position = 'absolute';
+							document.getElementById('error-message').style.top = '100%';
+							document.getElementById('error-message').style.left = '50%';
+							document.getElementById('error-message').style.transform = 'translate(-50%, 0)';
+							document.getElementById('error-message').style.zIndex = '1';
+							document.getElementById('error-message').style.padding = '10px';
+							document.getElementById('error-message').style.backgroundColor = '#f44336';
+							document.getElementById('error-message').style.color = '#fff';
+							document.getElementById('error-message').style.borderRadius = '5px';
+
+						  document.getElementById('postcode').style.border = '2px solid #f44336 ';
+						  document.getElementById('postcode').style.borderRadius = '5px';
                         return false;
                     } else {
-                        errorMessage.style.display = 'none';
+                        document.getElementById('error-message').style.display = 'none';
                         return true;
                     }
                     }
@@ -117,7 +129,7 @@
 
 						  document.getElementById('postcode').style.border = '2px solid #f44336 ';
 						  document.getElementById('postcode').style.borderRadius = '5px';
-                            errorMessage.style.display = 'none';
+                            
                         } else {
                             valueBefore = inputField.value;
                         }
