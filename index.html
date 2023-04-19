@@ -93,7 +93,7 @@
                     let valueBefore = inputField.value;
 
                     function validateAutoComplete() {
-                    if (inputField.value === '') {
+                    if (inputField.value === '' | inputField.value==valueBefore) {
                         
                             document.getElementById('error-message').style.display = 'block';
 						  document.getElementById('error-message').style.position = 'absolute';
@@ -120,15 +120,6 @@
                     }
                     }
 
-                    inputField.addEventListener('input', () => {
-                        if (inputField.value === valueBefore) {
-                            console.log(valueBefore);
-                            console.log(inputField.value);
-
-                        } else {
-                            valueBefore = inputField.value;
-                        }
-                    });
 
 					  document.querySelector('form').addEventListener('submit', function(event) {
 						var addressInput = document.querySelector('input[name="address"]');
