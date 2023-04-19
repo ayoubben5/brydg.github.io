@@ -93,6 +93,14 @@
                     
                     var valueBefore = inputField.value;
                     console.log(valueBefore);
+                    document.querySelector('form').addEventListener('submit', function(event) {
+						var addressInput = document.querySelector('input[name="address"]');
+                            
+						  if (!validateAutoComplete(addressInput,valueBefore)) {
+                            event.preventDefault();
+                        } 
+						
+					  });
                 
                 });
                     
@@ -127,14 +135,7 @@
                     }
                    
 
-					  document.querySelector('form').addEventListener('submit', function(event) {
-						var addressInput = document.querySelector('input[name="address"]');
-                        
-						  if (!validateAutoComplete(addressInput,valueBefore)) {
-                            event.preventDefault();
-                        } 
-						
-					  });
+					  
 					</script>
 
                     <!-- the code i added ; END-->
