@@ -103,10 +103,11 @@
 				// 	  });
                 
                 // });
-                document.querySelector('input[name="address"]').addEventListener('keydown', (event) => {
+                const inputField = document.querySelector('input[name="address"]')
+                inputField.addEventListener('keydown', (event) => {
                     if (event.keyCode === 13) { // 13 is the keycode for Enter key
                         console.log(event.keyCode);
-                        document.querySelector('input[name="address"]').value = ''
+                        inputField.value = ''; 
                         event.preventDefault();
                         window.addEventListener('beforeunload', function (e) {
                             e.preventDefault();
