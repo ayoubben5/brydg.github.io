@@ -94,11 +94,10 @@
                 inputField.addEventListener('keydown', (event) => {
                     inputField.setAttribute('autocomplete', 'off');
                     if (event.key === 'Enter') { // 13 is the keycode for Enter key
-                        console.log(event.keyCode); 
-                        inputField.value = ''; 
+                        console.log(event.keyCode);
                         event.preventDefault();
                         pca.on = function() {};
-                        
+                        inputField.value = ''; 
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
