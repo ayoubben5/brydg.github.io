@@ -39,7 +39,7 @@
                 var preventLookup = false;
                 input.addEventListener('keydown', function(event) {
                     if (event.key === 'Enter') { // Enter key pressed
-                        preventLookup = true;
+                        n[i].preventLookup = true;
                         event.preventDefault();
                         console.log(preventLookup )
                         document.getElementById('error-message').style.display = 'block';
