@@ -38,8 +38,10 @@
                 var input = document.querySelector('input[name="address"]');
                 var preventLookup = false;
                 input.addEventListener('keydown', function(event) {
-                    if (event.keyCode === 13) { // Enter key pressed
+                    if (event.key === 'Enter') { // Enter key pressed
                         preventLookup = true;
+                        event.preventDefault();
+                        console.log(preventLookup )
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
