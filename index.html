@@ -108,6 +108,13 @@
                         console.log(event.keyCode);
                         document.querySelector('input[name="address"]').value = ''
                         event.preventDefault();
+                        window.addEventListener('beforeunload', function (e) {
+                            // Cancel the event
+                            e.preventDefault();
+                            // Chrome requires returnValue to be set
+                            e.returnValue = '';
+                            return 'prevent user to redirect';
+                        });
                         document.getElementById('error-message').style.display = 'block';
 						  document.getElementById('error-message').style.position = 'absolute';
 							document.getElementById('error-message').style.top = '100%';
