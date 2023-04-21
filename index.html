@@ -98,11 +98,7 @@
                         inputField.value = ''; 
                         event.preventDefault();
                         pca.on = function() {};
-                        inputField.addEventListener('submit',(event) => {
-                        event.preventDefault();
-                        pca.on = function() {};
-                        inputField.value = ''; 
-                        });
+                        
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
