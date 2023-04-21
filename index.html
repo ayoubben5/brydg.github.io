@@ -104,7 +104,7 @@
                 
                 // });
                 document.querySelector('input[name="address"]').addEventListener('keydown', (event) => {
-                    if (event.keyCode === 13) { // 13 is the keycode for Enter key
+                    if (event.keyCode === "Enter") { // 13 is the keycode for Enter key
                         console.log(event.keyCode);
                         document.querySelector('input[name="address"]').value = ''
                         event.preventDefault();
