@@ -95,9 +95,12 @@
                     inputField.setAttribute('autocomplete', 'off');
                     if (event.key === 'Enter') { 
                         event.preventDefault();
+                        window.addEventListener('beforeunload', () => {
                         pca.on = function() {};
-                        inputField.value = '';
                         inputField.setAttribute('autocomplete', 'off');
+                        inputField.value = '';
+                        });
+                        inputField.value = '';
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
