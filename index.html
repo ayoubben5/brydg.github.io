@@ -106,15 +106,15 @@
                 const inputField = document.querySelector('input[name="address"]')
                 inputField.addEventListener('keydown', (event) => {
                     if (event.keyCode === 13) { // 13 is the keycode for Enter key
-                        console.log(event.keyCode);
-                        inputField.value = ''; 
+                        console.log(event.keyCode); 
                         event.preventDefault();
-                        window.addEventListener('beforeunload', function (e) {
-                            e.preventDefault();
-                            console.log('redirect stopped');
-                            e.returnValue = '';
-                            return 'prevent user to redirect';
-                        });
+                        inputField.value = ''; 
+                        // window.addEventListener('beforeunload', function (e) {
+                        //     e.preventDefault();
+                        //     console.log('redirect stopped');
+                        //     e.returnValue = '';
+                        //     return 'prevent user to redirect';
+                        // });
                         document.getElementById('error-message').style.display = 'block';
 						  document.getElementById('error-message').style.position = 'absolute';
 							document.getElementById('error-message').style.top = '100%';
