@@ -93,8 +93,7 @@
                 const inputField = document.querySelector('input[name="address"]');
                 inputField.addEventListener('keydown', (event) => {
                     inputField.setAttribute('autocomplete', 'off');
-                    if (event.key === 'Enter') { // 13 is the keycode for Enter key
-                        console.log(event.keyCode);
+                    if (event.key === 'Enter') { 
                         event.preventDefault();
                         pca.on = function() {};
                         inputField.value = '';
@@ -114,8 +113,9 @@
                         setTimeout(function() {
 							document.getElementById('error-message').style.display = 'none';
 							document.getElementById('postcode').style.border = '';
-                            inputField.setAttribute('autocomplete', 'off');
+                            
 						}, 2000);
+                        
                        
                        
 
