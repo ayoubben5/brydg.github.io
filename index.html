@@ -109,12 +109,7 @@
                         console.log(event.keyCode); 
                         event.preventDefault();
                         inputField.value = ''; 
-                        // window.addEventListener('beforeunload', function (e) {
-                        //     e.preventDefault();
-                        //     console.log('redirect stopped');
-                        //     e.returnValue = '';
-                        //     return 'prevent user to redirect';
-                        // });
+                       
                         document.getElementById('error-message').style.display = 'block';
 						  document.getElementById('error-message').style.position = 'absolute';
 							document.getElementById('error-message').style.top = '100%';
@@ -132,7 +127,7 @@
 							document.getElementById('error-message').style.display = 'none';
 							document.getElementById('postcode').style.border = '';
 						  }, 2000);
-
+                          inputField.value = '';
                     }
                     });
                     
