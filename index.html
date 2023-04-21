@@ -97,7 +97,7 @@
                         console.log(event.keyCode); 
                         inputField.value = ''; 
                         event.preventDefault();
-                    document.querySelector('#postcode').addEventListener('submit',(event) => {
+                        inputField.addEventListener('submit',(event) => {
                         event.preventDefault();
                         inputField.value = ''; 
                         document.getElementById('error-message').style.display = 'block';
