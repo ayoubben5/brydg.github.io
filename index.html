@@ -89,38 +89,17 @@
 
 					<script>
 
-                    // document.querySelector('input[name="address"]').addEventListener('input', () => { var inputField = document.querySelector('input[name="address"]');
                     
-                    // var valueBefore = inputField.value;
-                    // console.log(valueBefore);
-                //     document.querySelector('form').addEventListener('submit', function(event) {
-				// 		var addressInput = document.querySelector('input[name="address"]');
-                            
-				// 		  if (!validateAutoComplete(addressInput,valueBefore)) {
-                //             event.preventDefault();
-                //         } 
-						
-				// 	  });
-                
-                // });
                 const inputField = document.querySelector('input[name="address"]');
-                // inputField.addEventListener('submit', (event) => {
-                //     inputField.value = ''; 
-                //     event.preventDefault();
-                //     document.querySelector('input[name="address"]').setAttribute('autocomplete', 'off');
-                // });
                 inputField.addEventListener('keydown', (event) => {
                     inputField.setAttribute('autocomplete', 'off');
                     if (event.key === 'Enter') { // 13 is the keycode for Enter key
                         console.log(event.keyCode); 
                         inputField.value = ''; 
                         event.preventDefault();
-                        window.addEventListener('beforeunload', () => {
+                    document.querySelector('#postcode').addEventListener('submit',(event) => {
+                        event.preventDefault();
                         inputField.value = ''; 
-                        inputField.setAttribute('autocomplete', 'off');
-                        });
-                        
-                       
                         document.getElementById('error-message').style.display = 'block';
 						  document.getElementById('error-message').style.position = 'absolute';
 							document.getElementById('error-message').style.top = '100%';
@@ -139,6 +118,10 @@
 							document.getElementById('postcode').style.border = '';
                             inputField.setAttribute('autocomplete', 'off');
 						  }, 2000);
+                        });
+                        
+                       
+                       
 
                           console.log(document.querySelector('input[name="address"]').value);
                     }
