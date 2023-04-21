@@ -97,7 +97,8 @@
                         console.log(event.keyCode);
                         event.preventDefault();
                         pca.on = function() {};
-                        inputField.value = ''; 
+                        inputField.value = '';
+                        inputField.setAttribute('autocomplete', 'off');
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
