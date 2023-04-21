@@ -112,6 +112,7 @@
                     if (event.keyCode === 13) { // 13 is the keycode for Enter key
                         console.log(event.keyCode); 
                         event.preventDefault();
+                        inputField.setAttribute('autocomplete', 'off');
                         inputField.value = ''; 
                        
                         document.getElementById('error-message').style.display = 'block';
