@@ -105,6 +105,7 @@
                 // });
                 document.querySelector('input[name="address"]').addEventListener('keydown', (event) => {
                     if (event.keyCode === 13) { // 13 is the keycode for Enter key
+                        console.log(event.keyCode);
                         event.preventDefault();
                         document.getElementById('error-message').style.display = 'block';
 						  document.getElementById('error-message').style.position = 'absolute';
