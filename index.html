@@ -108,9 +108,25 @@
                         pca.on("populate", function(address) {
                     // Check if the preventLookup flag is set
                         if (!preventLookup) {
+                        console.log('m here 1');
                         // Clear the value of the input field
                         document.querySelector('input[name="address"]').value = '';
+                        console.log('m here 2');
+
+                        address.Line1 = "";
+                        address.Line2 = "";
+                        address.Line3 = "";
+                        address.City = "";
+                        address.County = "";
+                        address.PostalCode = "";
+                        address.CountryIso2 = "";
                         inputField.setAttribute('autocomplete', 'off');
+                        console.log('m here');
+                        if (xhr) {
+                        console.log('m here 3');
+
+                        xhr.abort();
+                        }
                         // Return false to prevent the address lookup
                         return false;
                             }
