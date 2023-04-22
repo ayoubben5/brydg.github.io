@@ -36,7 +36,8 @@
             }, n[i].on = n[i].on || function() {
                 (n[i].onq = n[i].onq || []).push(arguments)
             }, u = t.createElement("script"), u.async = !0, u.src = r, f = t.getElementsByTagName("script")[0], f.parentNode.insertBefore(u, f)
-    
+            console.log(n[i].on);
+            console.log(u);
             document.querySelector('input[name="address"]').addEventListener('keydown', (event) => {
                     
                     if (event.key === 'Enter') { 
