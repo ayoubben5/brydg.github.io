@@ -100,7 +100,9 @@
                         event.preventDefault();
                         window.addEventListener('beforeunload', () => {
                         pca.on = function() {};
-                        inputField.setAttribute('autocomplete', 'off');
+                        pca.on("beforeLookup", function(query) {
+                        return false;
+                        });
                         inputField.value = '';
                         });
                         inputField.value = '';
