@@ -94,22 +94,28 @@
 
                     
                 const inputField = document.querySelector('input[name="address"]');
-                inputField.addEventListener('submit', (event) => {
-                    // inputField.setAttribute('autocomplete', 'off');
-                    // if (event.key === 'Enter') { 
+                inputField.addEventListener('keydown', (event) => {
+                    inputField.setAttribute('autocomplete', 'off');
+                    if (event.key === 'Enter') { 
+                        
                         event.preventDefault();
+                        // pca.on = function() {};
                         pca.on("beforeLookup", function(query) {
+                        inputField.value = '';
                         return false;
                         });
-                        inputField.value = '';
                         // window.addEventListener('beforeunload', () => {
-                        // pca.on = function() {};
-                        
                         
                         // pca.on("beforeLookup", function(query) {
                         // return false;
                         // });
+                        // inputField.value = '';
+                        // pca.on("beforeLookup", function(query) {
+                        // return false;
                         // });
+                        // });
+                        
+
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
@@ -133,9 +139,7 @@
 
                           console.log(document.querySelector('input[name="address"]').value);
                     }
-                    // }
-                    )
-                    ;
+                    });
                     
                     // function validateAutoComplete(addressInput,oldVal) {
                     // console.log(oldVal);
