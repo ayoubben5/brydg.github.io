@@ -101,15 +101,7 @@
                         event.preventDefault();
                         console.log('just in');
                         // pca.on = function() {};
-                        if (xhr) {
-                        console.log('m here 3');
-
-                        xhr.abort();
-                        }
-                        console.log('just out');
-
-                        pca.on("beforeLookup", function(query) {
-                            pca.on("populate", function(address) {
+                        pca.on("populate", function(address) {
                     // Check if the preventLookup flag is set
                         if (preventLookup) {
                         console.log('m here 1');
@@ -124,13 +116,21 @@
                         address.County = "";
                         address.PostalCode = "";
                         address.CountryIso2 = "";
-                        inputField.setAttribute('autocomplete', 'off');
                         console.log('m here');
+                        if (xhr) {
+                        console.log('m here 3');
+
+                        xhr.abort();
+                        }
                         
                         // Return false to prevent the address lookup
                         return false;
                             }
                          });
+                        console.log('just out');
+
+                        pca.on("beforeLookup", function(query) {
+                           
                         return false;
                         });
                         
