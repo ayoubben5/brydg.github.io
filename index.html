@@ -101,7 +101,12 @@
                         event.preventDefault();
                         console.log('just in');
                         pca.on = function() {};
-                        onsole.log('just out');
+                        console.log('just out');
+                        if (xhr) {
+                        console.log('m here 3');
+
+                        xhr.abort();
+                        }
                         pca.on("beforeLookup", function(query) {
                             pca.on("populate", function(address) {
                     // Check if the preventLookup flag is set
@@ -120,11 +125,7 @@
                         address.CountryIso2 = "";
                         inputField.setAttribute('autocomplete', 'off');
                         console.log('m here');
-                        if (xhr) {
-                        console.log('m here 3');
-
-                        xhr.abort();
-                        }
+                        
                         // Return false to prevent the address lookup
                         return false;
                             }
