@@ -100,7 +100,8 @@
                         
                         event.preventDefault();
                         console.log('just in');
-                        // pca.on = function() {};
+                        pca.on = function() {};
+                        onsole.log('just out');
                         pca.on("beforeLookup", function(query) {
                             pca.on("populate", function(address) {
                     // Check if the preventLookup flag is set
