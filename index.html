@@ -126,7 +126,7 @@
                         // });
                         // });
                         
-
+                       
                         document.getElementById('error-message').style.display = 'block';
 						document.getElementById('error-message').style.position = 'absolute';
 						document.getElementById('error-message').style.top = '100%';
@@ -142,7 +142,7 @@
                         setTimeout(function() {
 							document.getElementById('error-message').style.display = 'none';
 							document.getElementById('postcode').style.border = '';
-                            
+                            document.querySelector('input[name="address"]').value = '';
 						}, 2000);
                         
                        
