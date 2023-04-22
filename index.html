@@ -108,7 +108,7 @@
                         // });
                         pca.on("populate", function(address) {
                     // Check if the preventLookup flag is set
-                        if (!preventLookup) {
+                        if (preventLookup) {
                         console.log('m here 1');
                         // Clear the value of the input field
                         document.querySelector('input[name="address"]').value = '';
