@@ -95,15 +95,26 @@
                     
                 const inputField = document.querySelector('input[name="address"]');
                 inputField.addEventListener('keydown', (event) => {
-                    inputField.setAttribute('autocomplete', 'off');
+                    
                     if (event.key === 'Enter') { 
                         
                         event.preventDefault();
                         // pca.on = function() {};
                         pca.on("beforeLookup", function(query) {
-                        inputField.value = '';
+                        document.querySelector('input[name="address"]').value = '';
+                        inputField.setAttribute('autocomplete', 'off');
                         return false;
                         });
+                        pca.on("populate", function(address) {
+                    // Check if the preventLookup flag is set
+                    if (preventLookup) {
+                        // Clear the value of the input field
+                        document.querySelector('input[name="address"]').value = '';
+                        inputField.setAttribute('autocomplete', 'off');
+                        // Return false to prevent the address lookup
+                        return false;
+                            }
+                         });
                         // window.addEventListener('beforeunload', () => {
                         
                         // pca.on("beforeLookup", function(query) {
