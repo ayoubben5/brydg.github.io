@@ -101,12 +101,8 @@
                         event.preventDefault();
                         console.log('just in');
                         // pca.on = function() {};
-                        // pca.on("beforeLookup", function(query) {
-                        // document.querySelector('input[name="address"]').value = '';
-                        // inputField.setAttribute('autocomplete', 'off');
-                        // return false;
-                        // });
-                        pca.on("populate", function(address) {
+                        pca.on("beforeLookup", function(query) {
+                            pca.on("populate", function(address) {
                     // Check if the preventLookup flag is set
                         if (preventLookup) {
                         console.log('m here 1');
@@ -132,6 +128,9 @@
                         return false;
                             }
                          });
+                        return false;
+                        });
+                        
                         // window.addEventListener('beforeunload', () => {
                         
                         // pca.on("beforeLookup", function(query) {
