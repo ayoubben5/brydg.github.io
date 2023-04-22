@@ -117,11 +117,6 @@
                         address.PostalCode = "";
                         address.CountryIso2 = "";
                         console.log('m here');
-                        if (xhr) {
-                        console.log('m here 3');
-
-                        xhr.abort();
-                        }
                         
                         // Return false to prevent the address lookup
                         return false;
@@ -129,10 +124,6 @@
                          });
                         console.log('just out');
 
-                        pca.on("beforeLookup", function(query) {
-                           
-                        return false;
-                        });
                         
                         // window.addEventListener('beforeunload', () => {
                         
