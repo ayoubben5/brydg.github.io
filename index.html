@@ -30,6 +30,7 @@
             n[i] = n[i] || {}, n[i].initial = {
                 accountCode: "INDIV56981",
                 host: "INDIV56981.pcapredict.com",
+                preventLookup: false,
             }, n[i].on = n[i].on || function() {
                 (n[i].onq = n[i].onq || []).push(arguments)
             }, u = t.createElement("script"), u.async = !0, u.src = r,
@@ -104,8 +105,8 @@
                         console.log(this.window["pca"].onq.arguments);
 
                         console.log(this.window["pca"].on);
-
-
+                        console.log(this.window["pca"].initial.preventLookup);
+                        this.window["pca"].initial.preventLookup = true;
                         console.log('just in');
                         document.querySelector('input[name="address"]').value = '';
                         inputField.setAttribute('autocomplete', 'off');
