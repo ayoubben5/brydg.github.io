@@ -103,8 +103,7 @@
                         console.log('just in');
                         document.querySelector('input[name="address"]').value = '';
                         inputField.setAttribute('autocomplete', 'off');
-                        
-                        pca.on("populate", function(address) {
+                        this.window["pca"].on("populate", function(address) {
                         console.log('in');
                         // Check if the preventLookup flag is set
                         if (preventLookup) {
