@@ -36,8 +36,12 @@
             }, n[i].on = n[i].on || function() {
                 (n[i].onq = n[i].onq || []).push(arguments)
             }, u = t.createElement("script"), u.async = !0, u.src = r,
-            console.log(u),
-            u.addEventListener("load", function() {
+            console.log(i),
+            console.log(n[i]),
+            console.log(n[0]),
+            console.log(n[1]),
+
+            n[i].addEventListener("load", function() {
                 isRequestPending = false; 
                         });
             f = t.getElementsByTagName("script")[0], f.parentNode.insertBefore(u, f) 
