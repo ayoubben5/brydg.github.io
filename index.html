@@ -100,7 +100,7 @@
                         
                         event.preventDefault();
                         console.log('just in');
-                        console.log(this.address);
+                        document.querySelector('input[name="address"]').value = '';
                         pca.on("populate", function(address) {
                         console.log('in');
                         // Check if the preventLookup flag is set
