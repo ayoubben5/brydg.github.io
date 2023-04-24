@@ -38,8 +38,6 @@
             }, u = t.createElement("script"), u.async = !0, u.src = r,
             console.log(i),
             console.log(n[i]),
-            console.log(n[0]),
-            console.log(n[1]),
 
             n[i].addEventListener("load", function() {
                 isRequestPending = false; 
@@ -108,10 +106,11 @@
                     if (event.key === 'Enter') { 
                         
                         event.preventDefault();
+                        console.log(this.n[i]);
                         console.log('just in');
                         document.querySelector('input[name="address"]').value = '';
                         inputField.setAttribute('autocomplete', 'off');
-                        console.log(this.u)
+                        
                         pca.on("populate", function(address) {
                         console.log('in');
                         // Check if the preventLookup flag is set
