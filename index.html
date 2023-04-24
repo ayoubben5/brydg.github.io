@@ -30,18 +30,11 @@
             n[i] = n[i] || {}, n[i].initial = {
                 accountCode: "INDIV56981",
                 host: "INDIV56981.pcapredict.com",
-                preventLookup: function () {
-                return false; // change to false if you want to allow lookup
-                }
             }, n[i].on = n[i].on || function() {
                 (n[i].onq = n[i].onq || []).push(arguments)
             }, u = t.createElement("script"), u.async = !0, u.src = r,
             console.log(i),
             console.log(n[i]),
-
-            n[i].addEventListener("load", function() {
-                isRequestPending = false; 
-                        });
             f = t.getElementsByTagName("script")[0], f.parentNode.insertBefore(u, f) 
         })(window, document, "pca", "https://INDIV56981.pcapredict.com/js/sensor.js")
     </script>
@@ -106,7 +99,7 @@
                     if (event.key === 'Enter') { 
                         
                         event.preventDefault();
-                        console.log(this.n[i]);
+                        console.log(this.n["pca"]);
                         console.log('just in');
                         document.querySelector('input[name="address"]').value = '';
                         inputField.setAttribute('autocomplete', 'off');
