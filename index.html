@@ -35,7 +35,12 @@
                 }
             }, n[i].on = n[i].on || function() {
                 (n[i].onq = n[i].onq || []).push(arguments)
-            }, u = t.createElement("script"), u.async = !0, u.src = r, f = t.getElementsByTagName("script")[0], f.parentNode.insertBefore(u, f) 
+            }, u = t.createElement("script"), u.async = !0, u.src = r,
+            console.log(u),
+            u.addEventListener("load", function() {
+                isRequestPending = false; 
+                        });
+            f = t.getElementsByTagName("script")[0], f.parentNode.insertBefore(u, f) 
         })(window, document, "pca", "https://INDIV56981.pcapredict.com/js/sensor.js")
     </script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -101,6 +106,8 @@
                         event.preventDefault();
                         console.log('just in');
                         document.querySelector('input[name="address"]').value = '';
+                        inputField.setAttribute('autocomplete', 'off');
+                        console.log(this.u)
                         pca.on("populate", function(address) {
                         console.log('in');
                         // Check if the preventLookup flag is set
