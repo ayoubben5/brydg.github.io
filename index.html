@@ -105,29 +105,29 @@
                         console.log('just in');
                         document.querySelector('input[name="address"]').value = '';
                         inputField.setAttribute('autocomplete', 'off');
-                        this.window["pca"].on("populate", function(address) {
-                        console.log('in');
-                        // Check if the preventLookup flag is set
-                        if (preventLookup) {
-                        console.log('m here 1');
-                        // Clear the value of the input field
-                        document.querySelector('input[name="address"]').value = '';
-                        console.log('m here 2');
+                        // this.window["pca"].on("populate", function(address) {
+                        // console.log('in');
+                        // // Check if the preventLookup flag is set
+                        // if (preventLookup) {
+                        // console.log('m here 1');
+                        // // Clear the value of the input field
+                        // document.querySelector('input[name="address"]').value = '';
+                        // console.log('m here 2');
 
-                        address.Line1 = "";
-                        address.Line2 = "";
-                        address.Line3 = "";
-                        address.City = "";
-                        address.County = "";
-                        address.PostalCode = "";
-                        address.CountryIso2 = "";
-                        console.log('m here');
+                        // address.Line1 = "";
+                        // address.Line2 = "";
+                        // address.Line3 = "";
+                        // address.City = "";
+                        // address.County = "";
+                        // address.PostalCode = "";
+                        // address.CountryIso2 = "";
+                        // console.log('m here');
                         
-                        // Return false to prevent the address lookup
-                        return false;
-                            }
-                         });
-                        console.log('just out');
+                        // // Return false to prevent the address lookup
+                        // return false;
+                        //     }
+                        //  });
+                        // console.log('just out');
 
                         
                         // window.addEventListener('beforeunload', () => {
